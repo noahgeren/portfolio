@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Noah Geren</title>
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+	<link rel="stylesheet" href="./static/css/app.css"/>
+	<!-- Javascript -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+	<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+	<script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+	<div id="app">
+		<template>
+			<b-container fluid>
+				<b-row class="min-vh-100" id="header">
+					<b-col class="text-center align-self-center">
+						<img src="./static/img/NoahHeadshot.jpeg" class="rounded-circle" />
+						<h1 class="mb-0">Noah Geren</h1>
+						<em>Software Developer</em>
+						<div id="socials">
+							<a href="https://github.com/noahgeren" target="_blank"><img src="./static/img/github.svg"></a>
+							<a href="https://www.linkedin.com/in/noahgeren/" target="_blank"><img src="./static/img/linkedin.svg"></a>
+							<a href="https://www.hackerrank.com/noah_s_geren" target="_blank"><img src="./static/img/hackerrank.svg"></a>
+							<a href="mailto:noah.s.geren@gmail.com"><img src="./static/img/gmail.svg"></a>
+						</div>
+					</b-col>
+				</b-row>
+			</b-container>
+		</template>
+		<div id="overlay" :style="(lights) ? 'd-none': `background-image: radial-gradient(circle at ${mouseX}px ${mouseY}px, transparent 0%, black 20%);`"></div>
+		<div id="controls" class="m-3" :class="(lights) ? '' : 'text-white'">
+			<h3 class="d-inline">Lights</h3>
+			<label class="switch">
+				<input type="checkbox" v-model="lights">
+				<span class="slider"></span>
+			</label>
+			<i data-feather="menu"></i>
+		</div>
+	</div>
+</body>
+<script>
+	const app = new Vue({
+		el: '#app',
+		data: function() {
+			return {
+				mouseX: 500,
+				mouseY: 0,
+				lights: false
+			};
+		},
+		mounted: function() {
+			const overlay = document.getElementById('overlay');
+			window.addEventListener('mousemove', (e) => {
+				this.mouseX = e.clientX;
+				this.mouseY = e.clientY;
+			});
+			feather.replace();
+		}
+	});
+</script>
+</html>
