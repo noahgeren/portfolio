@@ -1,35 +1,109 @@
-html, body {
+body {
     font-family:"Roboto", sans-serif;
     height: 100%;
     width: 100%;
+    color: white;
+    background-color: #00b894;
+    text-shadow: #005a48 1px 2px;
 }
 
 #header .col {
     margin-bottom: -45vh;
 }
 
-#header h1 {
+.container-fluid {
+    opacity: 0;
+}
+
+h1 {
     font-size: 48pt;
+}
+
+h2 {
+    font-size: 32pt;
 }
 
 #header img.rounded-circle {
     height: 25vh;
 }
 
-#socials img {
-    height: 3rem;
-    width: 3rem;
-    padding: 0 .5rem;
+#socials .icon-link {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: 0 .5rem;
 }
 
-#controls {
+#projects .icon-link {
+    height: 4rem;
+    width: 4rem;
+    margin: 0 1rem;
+}
+
+#menu {
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 1000;
+    pointer-events: none;
 }
 
-#controls .feather-menu,  #header .feather-chevron-down{
+#menu.active {
+    pointer-events: all;
+}
+
+#menu .feather{
     height: 3rem;
     width: 3rem;
     cursor: pointer;
+    -webkit-filter: drop-shadow( 1px 2px, #005a48);
+    filter: drop-shadow( 1px 2px #005a48);
+    transition: all 0.3s;
+    pointer-events: all;
+}
+
+#menu .feather-x {
+    display: none;
+}
+
+#menu #side-menu {
+    margin-right: -100%;
+    transition: all 0.3s;
+    background-color: #005a48;
+    text-shadow: #003f32 1px 2px;
+}
+
+#menu #side-menu li {
+    padding: 2rem 0;
+    border-bottom: white 3px solid;
+}
+
+#menu #side-menu li a {
+    color: white;
+}
+
+#menu.active #side-menu{
+    margin-right: 0;
+}
+
+#menu.active .feather-menu {
+    display: none;
+}
+
+#menu.active .feather-x {
+    display: inline-block;
+}
+
+#header .feather-chevron-down {
+    height: 3rem;
+    width: 3rem;
+    stroke: #00b894;
+}
+
+#projects {
+    background-color: #0984e3;
+    text-shadow: #095086 1px 2px;
+}
+
+#footer {
+    text-shadow: none;
 }

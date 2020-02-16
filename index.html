@@ -15,9 +15,25 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 	<script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 	<script src="https://unpkg.com/feather-icons"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/2.0.5/velocity.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
 </head>
 <body>
 	<div id="app">
+		<div id="menu">
+			<div class="float-right min-vh-100 text-center px-3" id="side-menu">
+				<ul class="list-unstyled" @click="showMenu">
+					<li><h2><a href="#">Home</a></h2></li>
+					<li><h2><a href="#projects">Projects</a></h2></li>
+					<li><h2><a href="#contact">Contact</a></h2></li>
+					<li><h2><a href="/">Resume</a></h2></li>
+				</ul>
+			</div>
+			<div class="d-inline-block float-right" @click="showMenu">
+				<i data-feather="menu" class="mt-2 mt-md-4 mr-3 mr-md-5"></i>
+				<i data-feather="x" class="mt-2 mt-md-4 mr-3"></i>
+			</div>
+		</div>
 		<template>
 			<b-container fluid>
 				<b-row class="min-vh-100" id="header">
@@ -25,46 +41,91 @@
 						<img src="./static/img/NoahHeadshot.jpeg" class="rounded-circle" />
 						<h1 class="mb-0">Noah Geren</h1>
 						<em>Full-Stack Web Developer</em>
-						<div id="socials">
-							<a href="https://github.com/noahgeren" target="_blank"><img src="./static/img/github.svg"></a>
-							<a href="https://www.linkedin.com/in/noahgeren/" target="_blank"><img src="./static/img/linkedin.svg"></a>
+						<div id="socials" class="mt-3">
+							<a href="https://github.com/noahgeren" target="_blank"><img src="./static/img/github.svg" class="icon-link"></a>
+							<a href="https://www.linkedin.com/in/noahgeren/" target="_blank"><img src="./static/img/linkedin.svg" class="icon-link"></a>
 						</div>
 					</b-col>
-					<b-col cols="12" class="text-center align-self-end pb-5"><i data-feather="chevron-down"></i></b-col>
+					<b-col cols="12" class="text-center align-self-end pb-3 pb-lg-5"><a href="#projects" class="d-inline-block bg-white rounded-circle"><i data-feather="chevron-down"></i></a></b-col>
 				</b-row>
-				<b-row>
+				<b-row id="projects"  class="py-5">
 					<b-col cols="12">
-						<h1 class="text-center">Projects</h1>
+						<h1 class="text-center mb-2 mb-md-5">Projects</h1>
 					</b-col>
 					<b-col>
 						<b-row>
-							<b-col cols="12" md="6">
-								<b-carousel class="p-3" controls indicators>
+							<b-col cols="12" lg="6">
+								<b-carousel class="py-5 p-lg-3" controls indicators>
 									<b-carousel-slide img-src="./static/img/ClearData/1.png"></b-carousel-slide>
 									<b-carousel-slide img-src="./static/img/ClearData/2.png"></b-carousel-slide>
 									<b-carousel-slide img-src="./static/img/ClearData/3.png"></b-carousel-slide>
 									<b-carousel-slide img-src="./static/img/ClearData/4.png"></b-carousel-slide>
 								</b-carousel>
 							</b-col>
-							<b-col cols="12" md="6">
-								Test
+							<b-col cols="12" lg="6" class="align-self-center">
+								<div class="p-lg-3 text-center">
+									<h2 class="mb-4">Clear Data</h2>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+										Ipsum dolor sit amet consectetur adipiscing elit. Faucibus vitae aliquet nec ullamcorper sit. Enim facilisis gravida neque 
+										convallis a cras semper auctor. Quam vulputate dignissim suspendisse in. Donec ultrices tincidunt arcu non sodales neque sodales 
+										ut etiam. Orci eu lobortis elementum nibh tellus molestie nunc non. Gravida arcu ac tortor dignissim convallis aenean. Turpis 
+										massa tincidunt dui ut ornare. Ac odio tempor orci dapibus. Pharetra vel turpis nunc eget lorem dolor sed viverra ipsum. Eget 
+										sit amet tellus cras adipiscing enim eu. Pharetra magna ac placerat vestibulum. Laoreet sit amet cursus sit amet dictum. 
+										Pharetra vel turpis nunc eget lorem dolor sed viverra.
+									</p>
+									<div>
+										<a href="https://github.com/noahgeren" target="_blank"><img src="./static/img/github.svg" class="icon-link"></a>
+										<a href="https://noahgeren.tech/ClearData/" target="_blank"><i data-feather="external-link" style="stroke: white;" class="icon-link"></i></a>
+									</div>
+								</div>
 							</b-col>
 						</b-row>
 						<b-row>
-							<b-col cols="12" md="6" class="bg-danger order-md-2">
-								Test
+							<b-col cols="12" lg="6" class="order-lg-2">
+								<b-carousel class="py-5 p-lg-3" controls indicators>
+									<b-carousel-slide img-src="./static/img/ClearData/1.png"></b-carousel-slide>
+									<b-carousel-slide img-src="./static/img/ClearData/2.png"></b-carousel-slide>
+									<b-carousel-slide img-src="./static/img/ClearData/3.png"></b-carousel-slide>
+									<b-carousel-slide img-src="./static/img/ClearData/4.png"></b-carousel-slide>
+								</b-carousel>
 							</b-col>
-							<b-col cols="12" md="6" class="order-md-1">
-								TEst
+							<b-col cols="12" lg="6" class="align-self-center order-lg-1">
+								<div class="p-lg-3 text-center">
+									<h2 class="mb-4">Clear Data</h2>
+									<p>
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+										Ipsum dolor sit amet consectetur adipiscing elit. Faucibus vitae aliquet nec ullamcorper sit. Enim facilisis gravida neque 
+										convallis a cras semper auctor. Quam vulputate dignissim suspendisse in. Donec ultrices tincidunt arcu non sodales neque sodales 
+										ut etiam. Orci eu lobortis elementum nibh tellus molestie nunc non. Gravida arcu ac tortor dignissim convallis aenean. Turpis 
+										massa tincidunt dui ut ornare. Ac odio tempor orci dapibus. Pharetra vel turpis nunc eget lorem dolor sed viverra ipsum. Eget 
+										sit amet tellus cras adipiscing enim eu. Pharetra magna ac placerat vestibulum. Laoreet sit amet cursus sit amet dictum. 
+										Pharetra vel turpis nunc eget lorem dolor sed viverra.
+									</p>
+									<div>
+										<a href="https://github.com/noahgeren" target="_blank"><img src="./static/img/github.svg" class="icon-link"></a>
+										<a href="https://noahgeren.tech/ClearData/" target="_blank"><i data-feather="external-link" style="stroke: white;" class="icon-link"></i></a>
+									</div>
+								</div>
 							</b-col>
 						</b-row>
 					</b-col>
 				</b-row>
+				<b-row id="contact">
+					<b-col class="text-center py-5">
+						<h1 class="mb-2">Contact</h1>
+						<p class="h4 text-break">
+							I'm currently available for side projects! You can contact me at:<br/>
+							<a href="mailto:noahsgeren@gmail.com" class="text-white"><u>Noah.S.Geren@gmail.com</u></a></p>
+					</b-col>
+				</b-row>
+				<b-row class="bg-dark text-white text-center p-3" id="footer">
+					<b-col>
+						&copy; 2020 Noah Geren - All Rights Reserved
+					</b-col>
+				</b-row>
 			</b-container>
 		</template>
-		<div id="controls" class="mt-3 mr-3 mr-md-5" @click="showMenu">
-			<i data-feather="menu" ></i>
-		</div>
 	</div>
 </body>
 <script>
@@ -77,11 +138,20 @@
 		},
 		methods: {
 			showMenu: function(){
-				alert('here')
+				document.getElementById('menu').classList.toggle('active');
 			}
 		},
 		mounted: function() {
 			feather.replace();
+			new SmoothScroll('a[href*="#"]', {
+				speed: 750,
+				updateURL: false
+			});
+			document.querySelector('.container-fluid').velocity({
+				opacity: '1'
+			}, {
+				duration: 750
+			});
 		}
 	});
 </script>
