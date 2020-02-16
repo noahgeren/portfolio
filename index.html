@@ -21,7 +21,7 @@
 <body>
 	<div id="app">
 		<div id="menu">
-			<div class="float-right min-vh-100 text-center px-3" id="side-menu">
+			<div class="float-right text-center px-3" id="side-menu">
 				<ul class="list-unstyled" @click="showMenu">
 					<li><h2><a href="#">Home</a></h2></li>
 					<li><h2><a href="#projects">Projects</a></h2></li>
@@ -46,7 +46,9 @@
 							<a href="https://www.linkedin.com/in/noahgeren/" target="_blank"><img src="./static/img/linkedin.svg" class="icon-link"></a>
 						</div>
 					</b-col>
-					<b-col cols="12" class="text-center align-self-end pb-3 pb-lg-5"><a href="#projects" class="d-inline-block bg-white rounded-circle"><i data-feather="chevron-down"></i></a></b-col>
+					<b-col cols="12" class="text-center align-self-end pb-3 pb-lg-5" id="down">
+						<a href="#projects" class="d-inline-block bg-white rounded-circle"><i data-feather="chevron-down"></i></a>
+					</b-col>
 				</b-row>
 				<b-row id="projects"  class="py-5">
 					<b-col cols="12">
@@ -55,7 +57,7 @@
 					<b-col>
 						<b-row>
 							<b-col cols="12" lg="6">
-								<b-carousel class="py-5 p-lg-3" controls indicators>
+								<b-carousel class="py-5 p-xl-3 pb-xl-5" controls indicators>
 									<b-carousel-slide img-src="./static/img/ClearData/1.png"></b-carousel-slide>
 									<b-carousel-slide img-src="./static/img/ClearData/2.png"></b-carousel-slide>
 									<b-carousel-slide img-src="./static/img/ClearData/3.png"></b-carousel-slide>
@@ -63,7 +65,7 @@
 								</b-carousel>
 							</b-col>
 							<b-col cols="12" lg="6" class="align-self-center">
-								<div class="p-lg-3 text-center">
+								<div class="p-xl-3 text-center">
 									<h2 class="mb-4">Clear Data</h2>
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -83,7 +85,7 @@
 						</b-row>
 						<b-row>
 							<b-col cols="12" lg="6" class="order-lg-2">
-								<b-carousel class="py-5 p-lg-3" controls indicators>
+								<b-carousel class="py-5 p-xl-3 pb-xl-5" controls indicators>
 									<b-carousel-slide img-src="./static/img/ClearData/1.png"></b-carousel-slide>
 									<b-carousel-slide img-src="./static/img/ClearData/2.png"></b-carousel-slide>
 									<b-carousel-slide img-src="./static/img/ClearData/3.png"></b-carousel-slide>
@@ -91,7 +93,7 @@
 								</b-carousel>
 							</b-col>
 							<b-col cols="12" lg="6" class="align-self-center order-lg-1">
-								<div class="p-lg-3 text-center">
+								<div class="p-xl-3 text-center">
 									<h2 class="mb-4">Clear Data</h2>
 									<p>
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -119,7 +121,7 @@
 							<a href="mailto:noahsgeren@gmail.com" class="text-white"><u>Noah.S.Geren@gmail.com</u></a></p>
 					</b-col>
 				</b-row>
-				<b-row class="bg-dark text-center p-3" id="footer">
+				<b-row class="text-center p-3" id="footer">
 					<b-col>
 						&copy; 2020 Noah Geren - All Rights Reserved
 					</b-col>
